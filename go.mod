@@ -4,7 +4,7 @@ go 1.19
 
 require (
 	github.com/chromedp/cdproto v0.0.0-20230310204135-a6d692f2c96d
-	github.com/chromedp/chromedp v0.9.0
+	github.com/chromedp/chromedp v0.9.1
 	github.com/stretchr/testify v1.8.2
 )
 
