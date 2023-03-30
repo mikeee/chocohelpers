@@ -32,7 +32,22 @@ jobs:
           go-version: "^1.19"
 
       - name: Test
-        run: go test -race -v ./...
+        run: go test -v -race -coverprofile=coverage.out -covermode=atomic ./...
+
+      - name: (Codecov) Upload coverage
+        uses: codecov/codecov-action@v3
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          file: ./coverage.out
+          flags: unittests
+
+      - name: (DeepSource) Upload coverage
+        run: |
+          curl https://deepsource.io/cli | sh
+          ./bin/deepsource report --analyzer test-coverage --key go --value-file ./coverage.out
+        env:
+          DEEPSOURCE_DSN: ${{ secrets.DEEPSOURCE_DSN }}
+          
   go-test-mac:
     runs-on: macos-latest
     steps:
