@@ -3,7 +3,7 @@ module github.com/mikeee/chocohelpers
 go 1.19
 
 require (
-	github.com/chromedp/cdproto v0.0.0-20231019002500-864b42864d36
+	github.com/chromedp/cdproto v0.0.0-20231025043423-5615e204d422
 	github.com/chromedp/chromedp v0.9.3
 	github.com/stretchr/testify v1.8.4
 )
