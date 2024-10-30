@@ -5,7 +5,7 @@ go 1.23
 toolchain go1.23.2
 
 require (
-	github.com/chromedp/cdproto v0.0.0-20241022234722-4d5d5faf59fb
+	github.com/chromedp/cdproto v0.0.0-20241030022559-23c28aebe8cb
 	github.com/chromedp/chromedp v0.11.1
 	github.com/stretchr/testify v1.9.0
 )
