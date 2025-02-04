@@ -12,6 +12,11 @@ jobs:
   go-test-ubuntu:
     runs-on: ubuntu-latest
     steps:
+      - name: Disable apparmor
+        run: |
+           systemctl is-active --quiet apparmor.service && systemctl stop apparmor.service 
+           systemctl disable apparmor.service
+
       - uses: actions/checkout@v4
 
       - name: Set up Go
