@@ -14,8 +14,7 @@ jobs:
     steps:
       - name: Disable apparmor
         run: |
-           systemctl is-active --quiet apparmor.service && systemctl stop apparmor.service 
-           systemctl disable apparmor.service
+           sudo sysctl kernel.apparmor_restrict_unprivileged_userns=0
 
       - uses: actions/checkout@v4
 
