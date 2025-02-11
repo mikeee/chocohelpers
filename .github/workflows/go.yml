@@ -12,6 +12,10 @@ jobs:
   go-test-ubuntu:
     runs-on: ubuntu-latest
     steps:
+      - name: Disable apparmor
+        run: |
+           sudo sysctl kernel.apparmor_restrict_unprivileged_userns=0
+
       - uses: actions/checkout@v4
 
       - name: Set up Go
