@@ -25,8 +25,8 @@ func RegexMatch(url string, matchString string, matchIndex int) (rawRegex string
 }
 
 func RegexMatchWithOpts(url string, matchString string, matchIndex int, opts ...optionFunction) (rawRegex string,
-	err error) {
-
+	err error,
+) {
 	options := Options{}
 	for _, opt := range opts {
 		opt(&options)
