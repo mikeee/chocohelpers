@@ -2,7 +2,7 @@ module github.com/mikeee/chocohelpers
 
 go 1.23
 
-toolchain go1.24.1
+toolchain go1.25.1
 
 require (
 	github.com/chromedp/cdproto v0.0.0-20250307225615-b9fffb6d31ad
